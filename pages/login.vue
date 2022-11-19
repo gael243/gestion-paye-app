@@ -1,21 +1,24 @@
 <template>
   <div>
-    <form>
-      <h1>Login</h1>
-      <div>
-        <v-text-field placeholder="email" type="text" v-model="form.email" />
-      </div>
-      <div>
-        <v-text-field placeholder="password" type="password" v-model="form.password" />
-      </div>
-      <v-btn @click.prevent="handleAuthenticate()" :disabled="!form.email || !form.password">Se connecter</v-btn>
-    </form>
+    <v-card style="margin: auto; max-width: 500px; padding: 20px; margin-top: 50px;">
+      <form>
+        <h1>Login</h1>
+        <div>
+          <v-text-field placeholder="email" type="text" v-model="form.email" />
+        </div>
+        <div>
+          <v-text-field placeholder="password" type="password" v-model="form.password" />
+        </div>
+        <v-btn @click.prevent="handleAuthenticate()" :disabled="!form.email || !form.password">Se connecter</v-btn>
+      </form>
+    </v-card>
   </div>
 </template>
 
 <script>
 export default {
   name: "login",
+  layout: "empty",
   data () {
     return {
       form: {}

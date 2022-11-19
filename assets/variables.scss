@@ -1,4 +1,59 @@
 // Ref: https://github.com/nuxt-community/vuetify-module#customvariables
 //
 // The variables you want to modify
-// $font-size-root: 20px;
+
+@import '~vuetify/src/styles/styles.sass';
+
+$font-size-root: 16px;
+$red: map-deep-merge(
+    (
+      'base': #FF0000
+    ),
+    $red
+);
+$blue: map-deep-merge(
+    (
+      'base': #3167AF
+    ),
+    $blue
+);
+
+$green: map-deep-merge(
+    (
+      'base': #6CB766,
+      'darken-1': #3C8638
+    ),
+    $green
+);
+
+$yellow: map-deep-merge(
+    (
+      'base': #f5da00,
+    ),
+    $yellow
+);
+// $gray: #E2E2E2
+$black: #000000;
+$white:#ffffff;
+$gray: #3F4A59;
+$gray2: #54595f;
+$gray-light-1: #e7fcfc;
+$gray-light-2: #fbfbfb;
+$gray-light-3: #fcfcfc;
+$gray-light-4: #e0e0e061;
+$color1 : #D0DBE5 ;
+
+.v-application .blue--text {
+  color: map-get($blue, "base") !important;
+  caret-color: map-get($blue, "base") !important;
+}
+.v-application .blue {
+  background-color: map-get($blue, "base") !important;
+  border-color: map-get($blue, "base") !important;
+}
+.v-application .primary--text{
+  .v-label, .v-icon{
+    color: map-get($blue, "base") !important;
+    caret-color: map-get($blue, "base") !important;
+  }
+}
