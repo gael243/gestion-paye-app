@@ -65,10 +65,9 @@
           <v-spacer />
           <v-btn
             color="primary"
-            nuxt
-            to="/inspire"
+            @click.prevent="logout()"
           >
-            Continue
+            Logout
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -78,6 +77,12 @@
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  methods: {
+    logout() {
+      this.$auth.logout();
+      this.$router.push({ name: 'login' });
+    }
+  }
 }
 </script>
