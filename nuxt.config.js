@@ -31,7 +31,9 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/vue-scroll.js'
+    '~/plugins/vue-scroll.js',
+    '~/plugins/global-mixin.js',
+    '~/plugins/vee-validate.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -46,6 +48,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/toast',
     '@nuxtjs/auth-next'
   ],
 
@@ -70,8 +73,33 @@ export default {
     }
   },
 
+  toast: {
+    position: 'bottom-right',
+    duration: 5000,
+    theme: 'bubble',
+    iconPack: 'mdi',
+    action: {
+      text: 'Ok',
+      onClick: (e, toastObject) => {
+        toastObject.goAway(0)
+      }
+    },
+    register: [ // Register custom toasts
+      {
+        name: 'my-error',
+        message: 'Oops...Something went wrong',
+        options: {
+          type: 'error'
+        }
+      }
+    ]
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: [
+      'vee-validate'
+    ]
   },
 
   router: {

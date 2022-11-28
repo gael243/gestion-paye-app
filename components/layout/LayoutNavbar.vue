@@ -117,6 +117,7 @@ export default {
       mini: false,
       items: [
         { title: 'Accuiel', icon: 'mdi-home-city-outline', route: '/' },
+        { title: 'Bank', icon: 'mdi-bank', route: '/banks' },
       ]
     }
   }
